@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- this is v4 fontawesome cdn-->
+    <script src="https://use.fontawesome.com/efcb6191f0.js"></script>
+    <style>
+        /*I have used different font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+nav {
+    height: 80px;
+    background:black;
+    display: flex;
+    align-items: center;
+    padding: 0 60px 0 60px;
+    justify-content: space-between;
+}
+
+.icon {
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#click {
+    display: none;
+}
+
+#menu-bar {
+    list-style: none;
+    display: flex;
+}
+
+.logo {
+    font-size: 25px;
+    color: white;
+    font-weight: 600;
+}
+
+.link {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.auth-btn {
+    background-color: white;
+    color: black;
+}
+
+.auth-btn2 {
+    background-color: rgb(142, 102, 102);
+    color: white;
+}
+
+.link:hover,
+.link.active {
+
+    color: cyan;
+}
+
+
+@media (min-width:950px) {
+
+    .left-size {
+        margin-left: 50px;
+    }
+
+}
+@media (max-width:950px) {
+    nav {
+        padding: 0 20px 0 20px;
+    }
+    #click {
+        display: inline;
+    }
+    #menu-bar {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        background-color: #1b1b1b;
+        height: 100vh;
+        width: 100%;
+        display: block;
+        transition: all 0.3s ease;
+        z-index: 1;
+    }
+    .link:hover,
+    .link.active {
+        background-color: transparent;
+        color: cyan;
+    }
+    .list {
+        text-align: center;
+        margin: 25px 0px;
+        align-items: center;
+    }
+    .auth-btn {
+        display: block;
+    }
+    .auth-btn2 {
+        margin-top: -15px;
+        display: block;
+    }
+}
+.login-container {
+    position: relative;
+    margin-top: 15vh;
+    border-radius: 20px;
+    overflow: hidden;
+    height: auto;
+    width: 350px;
+    margin-bottom: 15vh;
+    background-color: white;
+    box-shadow: 10px 10px rgb(180, 175, 175);
+
+}
+
+@media (max-width:450px) {
+    .login-container {
+
+        width: 90%;
+    }
+}
+
+@media (max-width:750px) {
+    .login-container {
+        margin-top: 10vh;
+        margin-bottom: 10vh;
+    }
+}
+
+.login-data {
+    padding: 20px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    margin-bottom: 20px;
+    max-width: 380px;
+    width: 100%;
+    height: 55px;
+    background-color: #f0f0f0;
+    margin: 10px 0;
+    border-radius: 55px;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    padding: 0.4rem;
+}
+
+.input-field i {
+    text-align: center;
+    line-height: 60px;
+    color: #acacac;
+    font-size: 1.1rem;
+}
+
+input[type=email],
+input[type=password],
+input[type=button],
+input[type=submit] {
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 1;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    
+}
+
+button {
+    padding: 10px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #dd5050;
+    color: white;
+
+}
+
+.color-brown {
+    background-color: rgb(142, 102, 102);
+    color: white;
+
+    box-shadow: 3px 3px rgba(55, 54, 53, 0.601);
+}
+
+.color-white {
+    background-color: white;
+    border: 2px black solid;
+    color: black;
+
+    box-shadow: 3px 3px rgba(55, 54, 53, 0.601);
+}
+
+input[type=checkbox] {
+    height: 18px;
+    width: 18px;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+
+.content {
+ background:url('https://img.freepik.com/free-photo/person-using-smartphone-his-automated-home_23-2149036912.jpg?ga=GA1.1.1368699792.1718695269&semt=ais_hybrid');
+ background-size:cover;
+ background-repeat:no-repeat;
+ background-attachment:scroll;
+ display: flex;
+ justify-content:center;
+ align-items: center;
+ height:fit-content;
+ width:100;
+}
+
+footer {
+    height: auto;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Voice assistant based attendance monitoring
+            system</div>
+        <i class="fa fa-bars icon" class="icon" id="click" onclick="show()"></i>
+        <ul id="menu-bar">
+            <li class="list"><a href="/login" class="link auth-btn left-size">Login</a></li>
+            <li class="list"><a href="/" class="link auth-btn2">Register</a></li>
+        </ul>
+    </nav>
+    <form action="/signup" method="POST">
+    <div class="content">
+        <div class="login-container">
+            <div class="login-data">
+                <h1>Account Signup</h1>
+                <hr>
+                <div class="input-field">
+                    <i class="fa fa-user"></i>
+                    <input type="text" name="username" placeholder="Username" required />
+                </div>
+
+                <div class="input-field">
+                    <i class="fa fa-user"></i>
+                    <input type="email" name="email" placeholder="Email" required />
+                </div>
+                <div class="input-field">
+                    <i class="fa fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required />
+                </div>
+                <span style="font-size: 16px; "><input type="checkbox" id="check"><label for="check"
+                        style="cursor: pointer;position:relative;bottom:3px;"> I agree terms and
+                        condition</label></span>
+                <br><br><button id="register" class="color-brown" style="margin-bottom: 10px;">Signup</button>
+                <a href="/login">      Already have an account? Login</a>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
